@@ -1,6 +1,8 @@
 package io.qameta.allure;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -13,6 +15,7 @@ public class ManualTest {
     @Test
     @Manual
     @Microservice("Auth")
+    @Tags({@Tag("web"), @Tag("regress")})
     @DisplayName("Проверка авторизации через GitHub")
     public void testAuth(){
         step("Открыть главную страницу");
